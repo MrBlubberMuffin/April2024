@@ -40,22 +40,29 @@ public class Main {
 	public static String readTextFile(File file) throws FileNotFoundException {
 		Scanner myReader = new Scanner(file);
 		StringBuilder data = new StringBuilder();
-
-		String currentQuizName;
+		
 		Quiz currentQuiz;
-
+		String currentQuestion;
+		
 		if (myReader.hasNextLine()) {
 			for (int i = 0; i < myReader.length(); i++) {
-				if (myReader.charAt(i) == '@') {
+				if (myReader.charAt(i) == '@') { //quiz name
 					for (int j = i+1; j < myReader.length(); j++) {
-						if (myReader.charAt(j) == '&') {
-							currentQuizName = myReader.substring(i, j);
-							currentQuiz = Quiz.getQuiz(currentQuizName);
-							i = j;
+						if (myReader.charAt(j) == '&') { //end of quiz name
+							currentQuiz = Quiz.getQuiz(myReader.substring(i, j);
+							
+							for (int k = j + 1; k < myReader.length(); k++) {
+								if (myReader.charAt(k) == '#') {
+										currentQuestion = Quiz.getQuiz(myReader.substring(j, k));
+										i = k;
+								}
+							}
+							
 						}
 					}
 				}
-
+				
+				)
 				
 			}
 		}
@@ -71,7 +78,7 @@ public class Main {
 
 		return data.toString();
 	}
-
+//@ is for quiz name, & symbol for course name, # for questiosn, - for answers, = for answer correctness
 	public static void writeTextFile(File file) {
 		try {
 			FileWriter myWriter = new FileWriter(file, true);
