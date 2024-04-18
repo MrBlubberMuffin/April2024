@@ -1,0 +1,1 @@
+&Math@Trigonomoty#Evaluate cos180|-1{true|1{false|-2{false|2{false#What is 1 + 1|2{true|1{false&Chemistry@Atoms#What are atoms measured in?|Atoms{true|Ducks{false#What is food|yummy{true
