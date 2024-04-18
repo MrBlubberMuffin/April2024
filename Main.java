@@ -9,7 +9,69 @@ public class Main {
 		File Quizzes = new File("Quizzes.txt");
 		createTextFile(Quizzes);
 
-		System.out.println(" -------------------- >>> WELCOME TO QUIZZY <<< --------------------");
+		System.out.print("""
+                -------------------- >>> WELCOME TO QUIZZY <<< --------------------
+                
+                This is your new start.
+                
+                Let's get those grades up!
+                """);
+
+		boolean valid = true;
+
+		do {
+			System.out.println("Enter a command (type 'help' to see commands): ");
+			scanner.nextLine();
+
+			String input = scanner.nextLine();
+
+			if (input.equals("help")) {
+				instructions();
+			} else {
+				checkInput(input);
+			}
+		} while (!valid);
+	}
+
+	public static void checkInput(String input) {
+		switch (input) {
+			case "/quit":
+				System.exit(0);
+				break;
+			case "/manage":
+				manageQuizzes();
+				break;
+			case "/play":
+				playQuizzes();
+				break;
+		}
+	}
+
+	public static void manageQuizzes() {
+
+	}
+
+	public static void playQuizzes() {
+
+	}
+
+	public static void instructions() {
+		System.out.println("""
+                
+                Main commands:
+                
+                /quit                               Exit program
+                /manage                             Manage quizzes
+                /play                               Play a quiz
+                
+                Manage commands:
+                
+                /delete                             Delete a quiz
+                /add                                Add a quiz
+                /manage                             Manage a specific quiz
+                /back                               Go back to main menu
+                
+                """);
 	}
 
 	public static void createTextFile(File file) {
