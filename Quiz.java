@@ -45,6 +45,15 @@ public class Quiz {
         questions.put(question, answers);
     }
 
+    public static Quiz getQuiz(String name, ArrayList<Quiz> quizzes) {
+        for (Quiz quiz : quizzes) {
+            if (quiz.getQuizName().equals(name)) {
+                return Quiz;
+            }
+        }
+        return new Quiz("???", "???");
+    }
+
     public String toString() {
         return
                 quizName + "\n" +

@@ -40,12 +40,35 @@ public class Main {
 	public static String readTextFile(File file) throws FileNotFoundException {
 		Scanner myReader = new Scanner(file);
 		StringBuilder data = new StringBuilder();
+
+		String currentQuizName;
+		Quiz currentQuiz;
+
+		if (myReader.hasNextLine()) {
+			for (int i = 0; i < myReader.length(); i++) {
+				if (myReader.charAt(i) == '@') {
+					for (int j = i+1; j < myReader.length(); j++) {
+						if (myReader.charAt(j) == '&') {
+							currentQuizName = myReader.substring(i, j);
+							currentQuiz = Quiz.getQuiz(currentQuizName);
+							i = j;
+						}
+					}
+				}
+
+				
+			}
+		}
+
 		if (myReader.hasNextLine()) {
 			data.append(myReader.nextLine()).append(" ");
 			data.append("#");
 		} else {
 			return "###";
 		}
+
+
+
 		return data.toString();
 	}
 
@@ -53,11 +76,7 @@ public class Main {
 		try {
 			FileWriter myWriter = new FileWriter(file, true);
 			myWriter.append(quiz.getQuizName()).append(" ").append(quiz.getCourseName()).append(" ");
-			//for (int i = 0; i < quiz.getQuestions().size(); i++) {
-				//GO THROUGH QUESTIONS AND WRITE THEM ON THE FILE
-				//format, seperated by spaces and hastags
 
-			//}
 			for (Quiz quiz : quizzes) {
 				myWriter.append("@").append(quiz.getQuizName()).append("&").append(quiz.getCourseName);
 				quiz.getQuestions().forEach((key, value) -> {
