@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74520f" height="483.0" layoutX="-11.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" width="861.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#018244" height="454.0" layoutX="11.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="828.0" />
+      <Button layoutX="114.0" layoutY="125.0" mnemonicParsing="false" onAction="#ButtonA" prefHeight="26.0" prefWidth="76.0" text="A">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="448.0" layoutX="681.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" />
+      <Text fill="WHITE" layoutX="126.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="When did World War 2 Begin?">
+         <font>
+            <Font name="Verdana" size="28.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="724.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marks">
+         <font>
+            <Font name="Verdana" size="28.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="755.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+         <font>
+            <Font name="Verdana" size="30.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="612.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 marks">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="114.0" layoutY="171.0" mnemonicParsing="false" onAction="#ButtonB" prefHeight="26.0" prefWidth="76.0" text="B">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="114.0" layoutY="222.0" mnemonicParsing="false" onAction="#ButtonC" prefHeight="26.0" prefWidth="76.0" text="C">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="114.0" layoutY="268.0" mnemonicParsing="false" onAction="#ButtonD" prefHeight="26.0" prefWidth="76.0" text="D">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Text fill="WHITE" layoutX="114.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Answer: 1939/A">
+         <font>
+            <Font name="Verdana" size="17.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="204.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1941">
+         <font>
+            <Font name="Verdana" size="17.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="204.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1939">
+         <font>
+            <Font name="Verdana" size="17.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="204.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1920">
+         <font>
+            <Font name="Verdana" size="17.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="204.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1922">
+         <font>
+            <Font name="Verdana" size="17.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="138.0" layoutX="760.0" layoutY="80.0" rotate="-45.0" stroke="BLACK" strokeLineCap="BUTT" strokeLineJoin="BEVEL" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" width="13.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="138.0" layoutX="759.0" layoutY="80.0" rotate="45.0" stroke="BLACK" strokeLineCap="BUTT" strokeLineJoin="BEVEL" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" width="13.0" />
+      <Polyline fill="CHARTREUSE" layoutX="742.0" layoutY="96.0" points="34.39996337890625, -105.5999755859375, -30.800018310546875, -143.19998168945312, 34.39996337890625, -130.39996337890625, 94.7999267578125, -195.199951171875" strokeType="INSIDE" strokeWidth="0.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="861.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.QuestionController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74520f" height="483.0" stroke="BLACK" strokeType="INSIDE" width="861.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#018244" height="454.0" layoutX="17.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="828.0" />
+      <Button fx:id="backFunc" layoutX="27.0" layoutY="30.0" mnemonicParsing="false" onAction="#goBack" text="BACK" />
+      <TextField fx:id="enterQuestion" alignment="TOP_CENTER" layoutX="51.0" layoutY="107.0" prefHeight="75.0" prefWidth="767.0" promptText="Enter Question">
+         <font>
+            <Font name="Verdana Bold" size="35.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="addAnswer1" alignment="TOP_CENTER" layoutX="51.0" layoutY="218.0" prefHeight="47.0" prefWidth="767.0" promptText="Enter Answer 1">
+         <font>
+            <Font name="Verdana Bold" size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="addTitle" alignment="TOP_CENTER" layoutX="199.0" layoutY="18.0" prefHeight="75.0" prefWidth="470.0" promptText="Enter title">
+         <font>
+            <Font name="Verdana Bold" size="35.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="AddAnswer2" alignment="TOP_CENTER" layoutX="51.0" layoutY="275.0" prefHeight="47.0" prefWidth="767.0" promptText="Enter Answer 2">
+         <font>
+            <Font name="Verdana Bold" size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="AddAnswer3" alignment="TOP_CENTER" layoutX="51.0" layoutY="333.0" prefHeight="47.0" prefWidth="767.0" promptText="Enter Answer 3">
+         <font>
+            <Font name="Verdana Bold" size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="AddAnswer4" alignment="TOP_CENTER" layoutX="50.0" layoutY="391.0" prefHeight="47.0" prefWidth="767.0" promptText="Enter Answer 4">
+         <font>
+            <Font name="Verdana Bold" size="23.0" />
+         </font>
+      </TextField>
+      <CheckBox layoutX="793.0" layoutY="233.0" mnemonicParsing="false" />
+      <CheckBox layoutX="793.0" layoutY="290.0" mnemonicParsing="false" />
+      <CheckBox layoutX="793.0" layoutY="348.0" mnemonicParsing="false" />
+      <CheckBox layoutX="793.0" layoutY="406.0" mnemonicParsing="false" />
+      <Button fx:id="BackModify1" layoutX="781.0" layoutY="30.0" mnemonicParsing="false" text="NEXT" />
+   </children>
+</AnchorPane>
