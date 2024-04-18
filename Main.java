@@ -10,17 +10,23 @@ public class Main {
 
 		ArrayList<Quiz> quizzes = new ArrayList<>();
 
-		quizzes.add(new Quiz());
+		quizzes.add(new Quiz("QUIZ", "Math"));
 
 		ArrayList<String> answers = new ArrayList<>();
 		ArrayList<Boolean> correct = new ArrayList<>();
 
-		answers.add("1", false);
-		answers.add("2", true);
-		answers.add("3", false);
-		answers.add("4", false);
+		answers.add("1");
+		answers.add("2");
+		answers.add("3");
+		answers.add("4");
+		correct.add(false);
+		correct.add(true);
+		correct.add(false);
+		correct.add(false);
 
-		quizzes.get(0).addQuestions("1 + 1", answers);
+		quizzes.get(0).addQuestion("1 + 1", answers, correct);
+		quizzes.get(0).setQuizName("QUIZ");
+		quizzes.get(0).setCourseName("Math");
 
 		System.out.println(quizzes);
 	}

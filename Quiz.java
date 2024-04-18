@@ -20,6 +20,14 @@ public class Quiz {
         questions = new ArrayList<Question>();
     }
 
+    public void setQuizName(String name) {
+        quizName = name;
+    }
+
+    public void setCourseName(String name) {
+        courseName = name;
+    }
+
     public String getQuizName() {
         return quizName;
     }
