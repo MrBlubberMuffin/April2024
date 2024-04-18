@@ -1,8 +1,7 @@
-package AlexChan;
-
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+
 
 public class Quiz {
     private String quizName;
@@ -45,6 +44,7 @@ public class Quiz {
         questions.put(question, answers);
     }
 
+    //if quiz has these question marks as attributes, that means there is no quiz with the given name
     public static Quiz getQuiz(String name, ArrayList<Quiz> quizzes) {
         for (Quiz quiz : quizzes) {
             if (quiz.getQuizName().equals(name)) {
