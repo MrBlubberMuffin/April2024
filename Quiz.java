@@ -6,18 +6,18 @@ import java.util.HashMap;
 public class Quiz {
     private String quizName;
     private String courseName;
-    private HashMap<String, HashMap<String, Boolean>> questions;
+    private ArrayList<Question> questions
 
     public Quiz() {
         quizName = "";
         courseName = "";
-        questions = new HashMap<>();
+        questions = new ArrayList<Question>();
     }
 
     public Quiz(String name, String course) {
         quizName = name;
         courseName = course;
-        questions = new HashMap<>();
+        questions = new ArrayList<Question>();
     }
 
     public String getQuizName() {
@@ -36,12 +36,12 @@ public class Quiz {
         courseName = course;
     }
 
-    public HashMap<String, HashMap<String, Boolean>> getQuestions() {
+    public ArrayList<Question> getQuestions() {
         return questions;
     }
 
-    public void addQuestions(String question, HashMap<String, Boolean> answers) {
-        questions.put(question, answers);
+    public void addQuestion(String question, ArrayList<String> answers, ArrayList<Boolean> correct) {
+        questions.put(new Question(question, answers, correct, this));
     }
 
     //if quiz has these question marks as attributes, that means there is no quiz with the given name

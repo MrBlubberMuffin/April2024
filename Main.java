@@ -12,12 +12,13 @@ public class Main {
 
 		quizzes.add(new Quiz());
 
-		HashMap<String, Boolean> answers = new HashMap<>();
+		ArrayList<String> answers = new ArrayList<>();
+		ArrayList<Boolean> correct = new ArrayList<>();
 
-		answers.put("1", false);
-		answers.put("2", true);
-		answers.put("3", false);
-		answers.put("4", false);
+		answers.add("1", false);
+		answers.add("2", true);
+		answers.add("3", false);
+		answers.add("4", false);
 
 		quizzes.get(0).addQuestions("1 + 1", answers);
 
@@ -48,20 +49,16 @@ public class Main {
 				if (myReader.charAt(i) == '@') { //quiz name
 					for (int j = i+1; j < myReader.length(); j++) {
 						if (myReader.charAt(j) == '&') { //end of quiz name
-							currentQuiz = Quiz.getQuiz(myReader.substring(i, j);
-							
+							currentQuiz = Quiz.getQuiz(myReader.substring(i, j));
 							for (int k = j + 1; k < myReader.length(); k++) {
 								if (myReader.charAt(k) == '#') {
-										currentQuestion = Quiz.getQuiz(myReader.substring(j, k));
-										i = k;
+									currentQuestion = Quiz.getQuiz(myReader.substring(j, k));
+									i = k;
 								}
 							}
-							
 						}
 					}
 				}
-				
-				)
 			}
 		}
 
@@ -72,11 +69,9 @@ public class Main {
 			return "###";
 		}
 
-
-
 		return data.toString();
 	}
-//@ is for quiz name, & symbol for course name, # for questiosn, - for answers, = for answer correctness
+	//@ is for quiz name, & symbol for course name, # for questiosn, - for answers, = for answer correctness
 	public static void writeTextFile(File file) {
 		try {
 			FileWriter myWriter = new FileWriter(file, true);
