@@ -1,5 +1,4 @@
 package AlexChan;
-import opennlp.tools.sentdetect.SentenceDetectorME;
 
 public class TESTING {
 
