@@ -5,21 +5,11 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
 		File Quizzes = new File("Quizzes.txt");
+		createTextFile(Quizzes);
 
-		ArrayList<Quiz> quizzes = new ArrayList<>();
-
-		quizzes.add(new Quiz("QUIZ", "Math"));
-
-		quizzes.get(0).addQuestion("1 + 1");
-
-		quizzes.get(0).getQuestions().get(0).addOption("1", false);
-		quizzes.get(0).getQuestions().get(0).addOption("2", true);
-		quizzes.get(0).getQuestions().get(0).addOption("3", false);
-		quizzes.get(0).getQuestions().get(0).addOption("4", false);
-
-		System.out.println(quizzes + "\n\n\n");
-		writeTextFile(Quizzes, quizzes);
+		System.out.println(" -------------------- >>> WELCOME TO QUIZZY <<< --------------------");
 	}
 
 	public static void createTextFile(File file) {
@@ -34,14 +24,27 @@ public class Main {
 		}
 	}
 
-	public static String readTextFile(File file) throws FileNotFoundException {
+	public static ArrayList<Quiz> loadData() {
+		ArrayList<Quiz> quizzes = new ArrayList<>();
+
+
+
+
+
+		return quizzes;
+	}
+
+	public static String readFile(File file) throws FileNotFoundException {
 		Scanner myReader = new Scanner(file);
 		StringBuilder data = new StringBuilder();
 		if (myReader.hasNextLine()) {
-			data.append(myReader.nextLine()).append(" ");
-			data.append("#");
+
+			for (int i = 0; i < file.length(); i++) {
+				data.append(myReader.nextLine());
+			}
+
 		} else {
-			return "###";
+			return null;
 		}
 		return data.toString();
 	}
