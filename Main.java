@@ -60,14 +60,8 @@ public class Main {
 						}
 					}
 				}
-<<<<<<< HEAD
-
-
-=======
 				
 				)
-				
->>>>>>> fa276175f34c570c6b2e811cd0d34a9e2dd11ecc
 			}
 		}
 
