@@ -49,7 +49,7 @@ public class Main {
 		return data.toString();
 	}
 
-	public static void writeTextFile(File file, Quiz quiz) {
+	public static void writeTextFile(File file) {
 		try {
 			FileWriter myWriter = new FileWriter(file, true);
 			myWriter.append(quiz.getQuizName()).append(" ").append(quiz.getCourseName()).append(" ");
@@ -58,26 +58,20 @@ public class Main {
 				//format, seperated by spaces and hastags
 
 			//}
-
-			quiz.getQuestions().forEach((k, v) -> {
-					 System.out.print(v);
-					 System.out.println("ptoato");
+			for (Quiz quiz : quizzes) {
+				myWriter.append("@").append(quiz.getQuizName()).append("&").append(quiz.getCourseName);
+				quiz.getQuestions().forEach((key, value) -> {
+					myWriter.append("#").append(key);
+					value.forEach((k, v) -> {
+						myWriter.append("-").append(k).append("=").append(v)
+					});
+				});
 			}
-			
-					);
 
 			myWriter.close();
 			System.out.println("Successfully wrote to file.");
 		} catch (IOException e) {
 			System.out.println("An error occurred.");
 		}
-	}
-	
-	public static void helperMethod() {
-		quiz.getQuestions().forEach((k, v)
-				-> System.out.print(v)
-				
-				);
-
 	}
 }
