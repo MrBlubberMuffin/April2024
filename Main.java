@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
+		ArrayList<Quiz> quizzes = new ArrayList<>();
 		File Quizzes = new File("Quizzes.txt");
 
-		ArrayList<Quiz> quizzes = new ArrayList<>();
-
-		quizzes.add(new Quiz("QUIZ", "Math"));
+		Quiz quiz = new Quiz("QUIZ", "Math")
+		quizzes.add(quiz);
 
 		ArrayList<String> answers = new ArrayList<>();
 		ArrayList<Boolean> correct = new ArrayList<>();

@@ -2,7 +2,6 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
 public class Quiz {
     private String quizName;
     private String courseName;
