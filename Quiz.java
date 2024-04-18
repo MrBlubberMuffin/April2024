@@ -41,7 +41,7 @@ public class Quiz {
         questions.add(new Question(question, this));
     }
 
-    //if quiz has these question marks as attributes, that means there is no quiz with the given name
+    //if quiz has these question marks as these attributes, that means there is no quiz with the given name
     public static Quiz getQuiz(String name, ArrayList<Quiz> quizzes) {
         for (Quiz quiz : quizzes) {
             if (quiz.getQuizName().equals(name)) {
