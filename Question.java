@@ -1,19 +1,19 @@
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Question {
-    private String question
+    private String question;
     private ArrayList<String> answers;
     private ArrayList<Boolean> correct;
     private Quiz parentQuiz;
 
-    public Question(Quiz parent) {
-        question = "---";
+    public Question(String _question, Quiz parent) {
+        question = _question;
         answers = new ArrayList<String>();
         correct = new ArrayList<Boolean>();
     }
 
-    public Question(String question, ArrayList<String> answers, ArrayList<Boolean> correct, quiz parentQuiz) {
-        this.question = question";
+    public Question(String question, ArrayList<String> answers, ArrayList<Boolean> correct, Quiz parentQuiz) {
+        this.question = question;
         this.answers = answers;
         this.correct = correct;
     }
@@ -36,11 +36,11 @@ public class Question {
 
     public void addOption(String option, boolean _correct) {
         answers.add(option);
-        correct.add(_correct)
+        correct.add(_correct);
     }
 
     public String toString() {
-        return question + "\n" + answers + "\n" + correct
+        return question + "\n" + answers + "\n" + correct;
     }
 
 }

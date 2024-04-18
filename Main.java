@@ -1,32 +1,22 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.io.*;
 import java.util.Scanner;
 
 
 public class Main {
 	public static void main(String[] args) {
-		ArrayList<Quiz> quizzes = new ArrayList<>();
 		File Quizzes = new File("Quizzes.txt");
 
-		Quiz quiz = new Quiz("QUIZ", "Math")
-		quizzes.add(quiz);
+		ArrayList<Quiz> quizzes = new ArrayList<>();
 
-		ArrayList<String> answers = new ArrayList<>();
-		ArrayList<Boolean> correct = new ArrayList<>();
+		quizzes.add(new Quiz("QUIZ", "Math"));
 
-		answers.add("1");
-		answers.add("2");
-		answers.add("3");
-		answers.add("4");
-		correct.add(false);
-		correct.add(true);
-		correct.add(false);
-		correct.add(false);
+		quizzes.get(0).addQuestion("1 + 1");
 
-		quizzes.get(0).addQuestion("1 + 1", answers, correct);
-		quizzes.get(0).setQuizName("QUIZ");
-		quizzes.get(0).setCourseName("Math");
+		quizzes.get(0).getQuestions().get(0).addOption("1", false);
+		quizzes.get(0).getQuestions().get(0).addOption("2", true);
+		quizzes.get(0).getQuestions().get(0).addOption("3", false);
+		quizzes.get(0).getQuestions().get(0).addOption("4", false);
 
 		System.out.println(quizzes);
 	}
@@ -46,53 +36,32 @@ public class Main {
 	public static String readTextFile(File file) throws FileNotFoundException {
 		Scanner myReader = new Scanner(file);
 		StringBuilder data = new StringBuilder();
-		
-		Quiz currentQuiz;
-		String currentQuestion;
-		
-		if (myReader.hasNextLine()) {
-			for (int i = 0; i < myReader.length(); i++) {
-				if (myReader.charAt(i) == '@') { //quiz name
-					for (int j = i+1; j < myReader.length(); j++) {
-						if (myReader.charAt(j) == '&') { //end of quiz name
-							currentQuiz = Quiz.getQuiz(myReader.substring(i, j));
-							for (int k = j + 1; k < myReader.length(); k++) {
-								if (myReader.charAt(k) == '#') {
-									currentQuestion = Quiz.getQuiz(myReader.substring(j, k));
-									i = k;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
 		if (myReader.hasNextLine()) {
 			data.append(myReader.nextLine()).append(" ");
 			data.append("#");
 		} else {
 			return "###";
 		}
-
 		return data.toString();
 	}
-	//@ is for quiz name, & symbol for course name, # for questiosn, - for answers, = for answer correctness
-	public static void writeTextFile(File file) {
+
+	public static void writeTextFile(File file, Quiz quiz) {
 		try {
 			FileWriter myWriter = new FileWriter(file, true);
 			myWriter.append(quiz.getQuizName()).append(" ").append(quiz.getCourseName()).append(" ");
+			//for (int i = 0; i < quiz.getQuestions().size(); i++) {
+			//GO THROUGH QUESTIONS AND WRITE THEM ON THE FILE
+			//format, seperated by spaces and hastags
 
-			for (Quiz quiz : quizzes) {
-				myWriter.append("@").append(quiz.getQuizName()).append("&").append(quiz.getCourseName);
-				
-				quiz.getQuestions().forEach((key, value) -> {
-					myWriter.append("#").append(key);
-					value.forEach((k, v) -> {
-						myWriter.append("-").append(k).append("=").append(v)
-					});
-				});
-			}
+			//}
+
+//            quiz.getQuestions().forEach((key, value) -> {
+//                        value.forEach((k, v) -> {
+//                                    //HERE
+//                                }
+//                        );
+//                    }
+//            );
 
 			myWriter.close();
 			System.out.println("Successfully wrote to file.");
