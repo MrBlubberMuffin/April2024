@@ -59,11 +59,12 @@ public class Main {
 
 			//}
 
-			quiz.getQuestions().forEach((k, v)
-					-> System.out.print(v)
-					
+			quiz.getQuestions().forEach((k, v) -> {
+					 System.out.print(v);
+					 System.out.println("ptoato");
+			}
+			
 					);
-
 
 			myWriter.close();
 			System.out.println("Successfully wrote to file.");
