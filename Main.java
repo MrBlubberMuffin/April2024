@@ -56,7 +56,7 @@ public class Main {
 					}
 				}
 
-				
+
 			}
 		}
 
@@ -79,6 +79,7 @@ public class Main {
 
 			for (Quiz quiz : quizzes) {
 				myWriter.append("@").append(quiz.getQuizName()).append("&").append(quiz.getCourseName);
+				
 				quiz.getQuestions().forEach((key, value) -> {
 					myWriter.append("#").append(key);
 					value.forEach((k, v) -> {
