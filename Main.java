@@ -11,6 +11,9 @@ public class Main {
 
         quizzes.add(new Quiz());
 
+        quizzes.get(0).setQuizName("QUIZ 1");
+        quizzes.get(0).setCourseName("MATHEMATICS");
+
         HashMap<String, Boolean> answers = new HashMap<>();
 
         answers.put("1", false);
