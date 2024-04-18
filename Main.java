@@ -19,7 +19,7 @@ public class Main {
 		quizzes.get(0).getQuestions().get(0).addOption("4", false);
 
 		System.out.println(quizzes + "\n\n\n");
-		writeTextFile(quizzes);
+		writeTextFile(Quizzes, quizzes);
 	}
 
 	public static void createTextFile(File file) {
@@ -46,24 +46,24 @@ public class Main {
 		return data.toString();
 	}
 
-	public static void writeTextFile(ArrayList<Quiz> quizzes) {
+	public static void writeTextFile(File file, ArrayList<Quiz> quizzes) {
 		try {
-		FileWriter myWriter = new FileWriter(file, true);
+			FileWriter myWriter = new FileWriter(file, true);
 
-		for (Quiz quiz : quizzes) {
-			myWriter.append("&").append(quiz.getQuizName()).append("@").append(quiz.getCourseName());
-			for (Question question : quiz.getQuestions()) {
-				myWriter.append("#").append(question.getQuestion());
-				for (int i = 0; i < question.getAnswers().size(); i++) {
-					myWriter.append("|").append(question.getAnswers().get(i)).append("{").append(String.valueOf(question.getCorrect().get(i)));
+			for (Quiz quiz : quizzes) {
+				myWriter.append("&").append(quiz.getQuizName()).append("@").append(quiz.getCourseName());
+				for (Question question : quiz.getQuestions()) {
+					myWriter.append("#").append(question.getQuestion());
+					for (int i = 0; i < question.getAnswers().size(); i++) {
+						myWriter.append("|").append(question.getAnswers().get(i)).append("{").append(String.valueOf(question.getCorrect().get(i)));
+					}
 				}
 			}
-		}
 
-		myWriter.close();
-		System.out.println("Successfully wrote to file.");
+			myWriter.close();
+			System.out.println("Successfully wrote to file.");
 		} catch (IOException e) {
-		System.out.println("An error occurred.");
+			System.out.println("An error occurred.");
 		}
 	}
 }
