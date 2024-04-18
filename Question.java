@@ -1,4 +1,3 @@
-package AlexChan;
 import java.util.HashMap;
 
 public class Question {
