@@ -47,9 +47,8 @@ public class Main {
 	}
 
 	public static void writeTextFile(ArrayList<Quiz> quizzes) {
-		//try {
-		//FileWriter myWriter = new FileWriter(file, true);
-		StringBuilder myWriter = new StringBuilder();
+		try {
+		FileWriter myWriter = new FileWriter(file, true);
 
 		for (Quiz quiz : quizzes) {
 			myWriter.append("&").append(quiz.getQuizName()).append("@").append(quiz.getCourseName());
@@ -61,11 +60,10 @@ public class Main {
 			}
 		}
 
-		//myWriter.close();
+		myWriter.close();
 		System.out.println("Successfully wrote to file.");
-		System.out.println(myWriter.toString());
-		//} catch (IOException e) {
-		//System.out.println("An error occurred.");
-		//}
+		} catch (IOException e) {
+		System.out.println("An error occurred.");
+		}
 	}
 }
