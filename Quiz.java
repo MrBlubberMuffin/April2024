@@ -18,11 +18,11 @@ public class Quiz {
     }
 
     public void setQuizName(String name) {
-        quizName = name;
+        this.quizName = name;
     }
 
     public void setCourseName(String name) {
-        courseName = name;
+        this.courseName = name;
     }
 
     public String getQuizName() {
